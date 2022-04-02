@@ -1,0 +1,33 @@
+{
+  "name": "todos-crud-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "asb",
+    "deploy": "near dev-deploy build/release/todos-crud-contract.wasm",
+    "dev": "npm run build && npm run deploy",
+    "test": "npx asp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.20.3",
+    "asbuild": "^0.2.0",
+    "near-cli": "^3.2.0",
+    "near-sdk-as": "^3.2.3"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@as-pect/cli": "^6.2.4",
+    "@types/node": "^17.0.23",
+    "assemblyscript": "0.10.0-nightly.20200611"
+  }
+}
